@@ -1,49 +1,71 @@
-# 💼 Relatix CRM (Frontend Only)
+# 💼 Relatix CRM — Full Stack Application
 
-A modern **CRM Dashboard** built with **React.js**, **Redux Toolkit**, **Chart.js**, and **custom CSS** (no Tailwind directives).  
-It provides a clean UI for managing leads, visualizing sales data, tracking activities, and handling authentication — **fully frontend-based using localStorage**.
-
----
-
-## 🚀 Features
-
-✅ **Authentication**
-- Sign up and Login using localStorage (no backend)
-- Auto login after signup
-- Form validation with user-friendly errors
-
-✅ **Dashboard**
-- KPI Cards for MQL, SQL, Deals Won, and Revenue
-- Dynamic charts using **Chart.js**
-- Responsive and modern UI design
-
-✅ **Leads Management**
-- Add, Edit, Filter, Search, and Delete leads
-- Persistent data using localStorage
-- Inline lead status updates
-
-✅ **Activity Timeline**
-- View all recent notes and status changes
-- Automatically records mock activity data
-
-✅ **Responsive UI**
-- Fully responsive layout for desktop and mobile
-- Soft shadows, rounded corners, and elegant color palette
+A complete **Customer Relationship Management (CRM)** system built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**.  
+It features user authentication, role-based access, lead management, analytics dashboards, and beautiful UI — ideal for interview demos and portfolio projects.
 
 ---
 
-## 🏗️ Tech Stack
+## 🚀 Tech Stack
 
-| Category | Technologies |
-|-----------|---------------|
-| **Frontend Framework** | React.js (Vite) |
-| **State Management** | Redux Toolkit |
-| **Charting** | Chart.js + react-chartjs-2 |
-| **Routing** | React Router DOM |
-| **Styling** | Pure CSS (based on Tailwind design tokens) |
-| **Storage** | localStorage (mock backend) |
+| Layer | Technologies Used |
+|--------|--------------------|
+| **Frontend** | React.js, Redux Toolkit, Chart.js, React Router, Pure CSS (Tailwind-inspired) |
+| **Backend** | Node.js, Express.js, MongoDB (Mongoose), JWT Authentication |
+| **State & Auth** | Redux Toolkit + localStorage |
+| **Charting & UI** | Chart.js + custom dashboard components |
+| **Other Tools** | bcrypt, express-validator, dotenv, cors, helmet |
+
+---
+
+## 🏗️ Project Overview
+
+### 🖥️ Frontend (React)
+
+A clean and modern dashboard UI built with **React.js** and **Redux Toolkit**, featuring:
+- Authentication (Signup + Login)
+- Dashboard with KPI stats and charts
+- Leads table with CRUD operations (localStorage-based)
+- Activity timeline
+- Responsive design using custom CSS (no Tailwind directives)
+
+### ⚙️ Backend (Node.js + Express)
+
+A secure and scalable API backend that handles:
+- User authentication with JWT (Access + Refresh Tokens)
+- Role-based access control (Admin, Manager, Sales)
+- CRUD operations for leads
+- Input validation and error handling
+- MongoDB integration via Mongoose
 
 ---
 
 ## 📂 Folder Structure
-
+relatix-crm/
+├─ frontend/
+│ ├─ src/
+│ │ ├─ app/
+│ │ ├─ components/
+│ │ ├─ features/
+│ │ ├─ pages/
+│ │ ├─ utils/
+│ │ ├─ data/
+│ │ ├─ App.jsx
+│ │ ├─ routes.jsx
+│ │ └─ index.css
+│ ├─ vite.config.js
+│ ├─ tailwind.config.js
+│ └─ package.json
+│
+├─ backend/
+│ ├─ server.js
+│ ├─ config/
+│ │ └─ db.js
+│ ├─ middleware/
+│ ├─ models/
+│ ├─ controllers/
+│ ├─ routes/
+│ ├─ utils/
+│ ├─ package.json
+│ └─ .env
+│
+└─ README.md
