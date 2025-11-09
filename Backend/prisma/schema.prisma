@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+enum Role {
+  ADMIN
+  MANAGER
+  SALES_EXECUTIVE
+  USER
+}
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String   // for bcrypt hashed password
+  phone     String?
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Customer {
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  phone       String?
+  companyName String?
+  address     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  createdBy   User?    @relation(fields: [createdById], references: [id])
+  createdById String?
+  leads       Lead[]
+  deals       Deal[]
+}
+
+model Lead {
+  id          String   @id @default(uuid())
+  name        String
+  email       String?
+  phone       String?
+  status      String   @default("NEW") // e.g. NEW, CONTACTED, QUALIFIED, CONVERTED, LOST
+  source      String?  // e.g. website, referral, social media
+  notes       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  assignedTo  User?    @relation(fields: [assignedToId], references: [id])
+  assignedToId String?
+  customer    Customer? @relation(fields: [customerId], references: [id])
+  customerId  String?
+}
+
+model Deal {
+  id          String   @id @default(uuid())
+  title       String
+  amount      Float
+  stage       String   @default("Prospecting") // e.g. Prospecting, Negotiation, Closed Won, Closed Lost
+  closingDate DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  owner       User?      @relation(fields: [ownerId], references: [id])
+  ownerId     String?
+  customer    Customer?  @relation(fields: [customerId], references: [id])
+  customerId  String?
+  activities  Activity[]
+}
+

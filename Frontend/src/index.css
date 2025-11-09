@@ -1,0 +1,179 @@
+/* === Base Styles === */
+:root {
+  --brand-600: #1f6bdd;
+  --brand-700: #1955b1;
+  --bg: #ffffff;
+  --fg: #0b1529;
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Components === */
+
+/* Card */
+.card {
+  background-color: #fff;
+  border-radius: 1rem;
+  /* rounded-2xl */
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
+  /* p-5 */
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.75rem;
+  /* rounded-xl */
+  padding: 0.5rem 1rem;
+  /* px-4 py-2 */
+  font-weight: 500;
+  background-color: var(--brand-600);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--brand-700);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: #374151;
+  /* slate-700 */
+}
+
+.btn-ghost:hover {
+  background-color: #f1f5f9;
+  /* slate-100 */
+}
+
+/* Input fields */
+.input {
+  width: 100%;
+  border: 1px solid #e2e8f0;
+  /* slate-200 */
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--brand-600);
+  box-shadow: 0 0 0 2px rgba(31, 107, 221, 0.3);
+  /* focus:ring */
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #e2e8f0;
+  /* light gray */
+  color: #1e293b;
+  /* slate-800 */
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.space-y-3>*+* {
+  margin-top: 0.75rem;
+}
+
+.space-y-6>*+* {
+  margin-top: 1.5rem;
+}
+
+/* Layout Helpers */
+.grid {
+  display: grid;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
